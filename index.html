@@ -15,22 +15,24 @@
         </div> -->
         <form id="myForm">
             <label>
+                <label>
                 <input type="radio" name="options" value="0"> slow
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="options" value="1" checked> fast
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="options" value="2"> instant
+                </label>
+                <br>
+                <label>
+                    Number of steps: <input type="number" id="step">
+                </label>
             </label>
             <br>
-            <label>
-                <input type="radio" name="options" value="1"> fast
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="options" value="2"> instant
-            </label>
-            <br>
-            <label>
-                Number of steps: <input type="number" id="step">
-            </label>
-            <br>
-            <button type="button" onclick="executeFunction()">Start</button>
+            <button class="button1" type="button" onclick="executeFunction()">Start</button>
         </form>
     </div>
     
