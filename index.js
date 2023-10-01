@@ -2,7 +2,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-let step = 100;
+// let step = 100;
 let stepl = 10;
 let x1, y1 = 0;
 let x2 = canvas.width/2;
@@ -51,18 +51,49 @@ function takeStep(){
     drawLine(x1, y1, x2, y2);
 }
 
-function startDrawing(){
+function startDrawing(speed, steps = 100){
     clearCanvas();
-    for(let i = 0; i < step; i++){
-        setTimeout(takeStep, 5*i);
+    if(speed == 0){
+        for(let i = 0; i < steps; i++){
+            setTimeout(takeStep, 10*i);
+        }
     }
+    else if(speed == 1){
+        for(let i = 0; i < steps; i++){
+            setTimeout(takeStep, 10*i);
+        }
+    }
+    else if(speed == 2){
+        for(let i = 0; i < steps; i++){
+            takeStep();
+        }
+    }
+    else{
+        console.log("there seems to be a problem in startDrawing function, and else log statement is called from there. If this is called, then that means, the pattern wont appear, and for some reason, the speed is not 0,1,2. ")
+    }
+
     x1, y1 = 0;
     x2 = canvas.width/2;
     y2 = canvas.height/2;
 }
 
-const startButton = document.getElementById("start-button")
-startButton.addEventListener('click', startDrawing);
+// const startButton = document.getElementById("start-button")
+// startButton.addEventListener('click', startDrawing);
+function executeFunction() {
+    let speedValue = document.querySelector('input[name="options"]:checked');
+    let stepValue = document.getElementById('step').value;
+
+    if (speedValue && stepValue !== "") {
+        let speed = parseInt(speedValue.value);
+        let step = parseInt(stepValue);
+        
+        // Call your function with the selected values
+        startDrawing(speed, step);
+    } else {
+        alert("Please select an option and enter a number.");
+    }
+}
+
 
 
 

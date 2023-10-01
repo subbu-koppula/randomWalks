@@ -9,11 +9,36 @@
 </head>
 
 <body>
-    <button class="button1" id="start-button">start!</button>
-    <div class="grid-container">
-        <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="side-bar">
+        <!-- <div class="top-bar">
+            <button class="button1" id="start-button">start!</button>
+        </div> -->
+        <form id="myForm">
+            <label>
+                <input type="radio" name="options" value="0"> slow
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="options" value="1"> fast
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="options" value="2"> instant
+            </label>
+            <br>
+            <label>
+                Number of steps: <input type="number" id="step">
+            </label>
+            <br>
+            <button type="button" onclick="executeFunction()">Start</button>
+        </form>
     </div>
-
+    
+    <div class="main">
+        <div class="grid-container">
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 
