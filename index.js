@@ -54,7 +54,7 @@ function takeStep(){
 function startDrawing(){
     clearCanvas();
     for(let i = 0; i < step; i++){
-        setTimeout(takeStep, 10*i);
+        setTimeout(takeStep, 5*i);
     }
     x1, y1 = 0;
     x2 = canvas.width/2;
